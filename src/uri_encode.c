@@ -42,7 +42,7 @@ char *uri_encode (char *uri, char *buffer)
 {
   unsigned char *uuri = (unsigned char*)uri;
   int i = 0, j = 0;
-  while (uuri[i] != '\0')
+  while (uuri[i])
   {
     char * code = uri_encode_tbl[ uuri[i] ];
     if (code)
@@ -66,7 +66,7 @@ char *uri_decode (char *uri, char *buffer)
   int i = 0, j = 0;
   int len = strlen(uri);
   unsigned char *uuri = (unsigned char*)uri;
-  while(uri[i] != '\0')
+  while(uri[i])
   {
     if(uri[i] == '%')
     {
