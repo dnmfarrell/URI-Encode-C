@@ -1,10 +1,10 @@
 CC=gcc
-CFLAGS=-Wall -g -std=gnu99
+CFLAGS=-Wall -g -O3 -std=gnu99
 
 all: test
 
 test:
-	$(CC) $(CFLAGS) -DTesting -Ilib src/uri_encode.c -o uri_encode
+	$(CC) $(CFLAGS) -DTesting -Ilib src/uri_encode.c -o run-tests
 
 clean:
-	rm uri_encode
+	rm run-tests
