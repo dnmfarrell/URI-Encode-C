@@ -46,7 +46,11 @@ size_t uri_decode (const char *src, const size_t len, char *dst)
     }
     if (copy_char)
     {
-      dst[j] = src[i];
+      if (src[i] == '+') {
+        dst[j] = ' ';
+      } else {
+        dst[j] = src[i];
+      }
       i++;
       j++;
     }
